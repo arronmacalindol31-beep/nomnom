@@ -1,0 +1,80 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body - space background */
+body {
+    height: 100vh;
+    background: radial-gradient(circle at bottom, #0b0c2a, #000000);
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: white;
+}
+
+/* Stars background */
+body::before {
+    content: "";
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    animation: moveStars 60s linear infinite;
+    opacity: 0.5;
+}
+
+@keyframes moveStars {
+    from { transform: translate(0, 0); }
+    to { transform: translate(-500px, -500px); }
+}
+
+/* Form container */
+form {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 25px rgba(0, 150, 255, 0.5);
+    display: flex;
+    gap: 10px;
+}
+
+/* Input field */
+input[type="text"] {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    width: 250px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    transition: 0.3s;
+}
+
+/* Input glow */
+input[type="text"]:focus {
+    box-shadow: 0 0 10px #00c3ff;
+}
+
+/* Button */
+button {
+    padding: 12px 18px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(45deg, #00c3ff, #7d2ae8);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Button hover effect */
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #7d2ae8;
+}
